@@ -17,11 +17,6 @@ const main = async () => {
 
   const [poolSrv, poolName] = userPoolId.split('_');
   const userAgent = 'Mozilla/5.0 (Windows NT 10.0; rv:78.0) Gecko/20100101 Firefox/78.0';
-
-  console.log(process.argv)
-  process.exit()
-  console.log('iiiiiiiiiii')
-
   const userPool = new UserPool(poolName);
   const challenge = await userPool.getClientChallenge({username, password});
   const srpA = challenge.calculateA();
